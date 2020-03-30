@@ -1,0 +1,3 @@
+[submodule "Tifinagh-KeyboardLayout-OSX"]
+	path = Tifinagh-KeyboardLayout-OSX
+	url = https://github.com/miukumauku/Tifinagh-KeyboardLayout-OSX.git

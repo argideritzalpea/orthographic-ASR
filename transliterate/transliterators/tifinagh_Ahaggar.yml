@@ -1,0 +1,158 @@
+tokens:
+  a: [vowel]
+  e: [vowel]
+  i: [vowel]
+  u: [vowel]
+  b: [consonant]
+  m: [consonant]
+  f: [consonant]
+  t: [consonant]
+  ṭ: [consonant]
+  d: [consonant]
+  ḍ: [consonant]
+  n: [consonant]
+  r: [consonant]
+  ṛ: [consonant]
+  l: [consonant]
+  tt: [consonant]
+  zz: [consonant]
+  ss: [consonant]
+  s: [consonant]
+  ṣ: [consonant]
+  z: [consonant]
+  ẓ: [consonant]
+  č: [consonant]
+  ǧ: [consonant]
+  c: [consonant]
+  j: [consonant]
+  y: [consonant]
+  k: [consonant]
+  g: [consonant]
+  w: [consonant]
+  q: [consonant]
+  x: [consonant]
+  ɣ: [consonant]
+  h: [consonant]
+  ḥ: [consonant]
+  ɛ: [consonant]
+  ' ': [wb,whitespace]
+  '-': [hyphen]
+  ',': [punc]
+  bb: [consonant]
+  mm: [consonant]
+  ff: [consonant]
+  tt: [consonant]
+  ṭṭ: [consonant]
+  dd: [consonant]
+  ḍḍ: [consonant]
+  nn: [consonant]
+  rr: [consonant]
+  ṛṛ: [consonant]
+  ll: [consonant]
+  ss: [consonant]
+  ṣṣ: [consonant]
+  zz: [consonant]
+  ẓẓ: [consonant]
+  čč: [consonant]
+  ǧǧ: [consonant]
+  cc: [consonant]
+  jj: [consonant]
+  yy: [consonant]
+  kk: [consonant]
+  gg: [consonant]
+  ww: [consonant]
+  qq: [consonant]
+  xx: [consonant]
+  ɣɣ: [consonant]
+  hh: [consonant]
+  ḥḥ: [consonant]
+  ɛɛ: [consonant]
+rules:
+  <vowel> -: ""
+  '-': ""
+  ',': ""
+  ' ': " "
+  a: ⴰ
+  e: ⴰ
+  i: ⵉ
+  u: ⵓ
+  b: ⴱ
+  m: ⵎ
+  f: ⴼ
+  t: ⵜ
+  ṭ: ⵟ
+  d: ⴷ
+  ḍ: ⴹ
+  n: ⵏ
+  r: ⵔ
+  ṛ: ⵔ
+  l: ⵍ
+  tt: ⵜⵙ
+  zz: ⴷⵣ
+  ss: ⵜⵙ
+  s: ⵙ
+  ṣ: ⵙ
+  z: ⵣ
+  ẓ: ⵌ
+  č: ⵞ
+  ǧ: ⴶ
+  c: ⵛ
+  j: ⵊ
+  y: ⵉ
+  k: ⴾ
+  g: ⴳ
+  w: ⵓ
+  q: ⵈ
+  x: ⵆ
+  ɣ: ⵗ
+  h: ⵂ
+  ḥ: ⵘ
+  ɛ: ⵄ
+  a <consonant>: ""
+  u <consonant>: ""
+  i <consonant>: ""
+  e <consonant>: ""
+  a <hyphen>: ""
+  u <hyphen>: ""
+  i <hyphen>: ""
+  e <hyphen>: ""
+  a <wb>: "ⴰ"
+  u <wb>: "ⵓ"
+  e <wb>: "ⴻ"
+  i <wb>: "ⵉ"
+  bb: ⴱ
+  mm: ⵎ
+  ff: ⴼ
+  tt: ⵜ
+  ṭṭ: ⵟ
+  dd: ⴷ
+  ḍḍ: ⴹ
+  nn: ⵏ
+  rr: ⵔ
+  ṛṛ: ⵔ
+  ll: ⵍ
+  ss: ⵙ
+  ṣṣ: ⵙ
+  zz: ⵣ
+  ẓẓ: ⵌ
+  čč: ⵞ
+  ǧǧ: ⴶ
+  cc: ⵛ
+  jj: ⵊ
+  yy: ⵉ
+  kk: ⴾ
+  gg: ⴳ
+  ww: ⵓ
+  qq: ⵈ
+  xx: ⵆ
+  ɣɣ: ⵗ
+  hh: ⵂ
+  ḥḥ: ⵘ
+  ɛɛ: ⵄ
+whitespace:
+  consolidate: false
+  default: ' '
+  token_class: whitespace
+metadata:
+  title: ITRANS to Unicode
+  version: 0.1.0

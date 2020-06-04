@@ -2,8 +2,18 @@ tokens:
   a: [vowel]
   e: [vowel]
   i: [vowel]
+  ï: [vowel]
   u: [vowel]
+  o: [vowel]
+  aa: [vowel]
+  ee: [vowel]
+  ii: [vowel]
+  ïï: [vowel]
+  uu: [vowel]
+  p: [consonant]
   b: [consonant]
+  ḅ: [consonant]
+  v: [consonant]
   m: [consonant]
   f: [consonant]
   t: [consonant]
@@ -14,10 +24,12 @@ tokens:
   r: [consonant]
   ṛ: [consonant]
   l: [consonant]
+  ţ: [consonant]
   tt: [consonant]
   zz: [consonant]
   ss: [consonant]
   s: [consonant]
+  ç: [consonant]
   ṣ: [consonant]
   z: [consonant]
   ẓ: [consonant]
@@ -38,7 +50,14 @@ tokens:
   ' ': [wb,whitespace]
   '-': [hyphen]
   ',': [punc]
+  '.': [punc]
+  '?': [punc]
+  '’': [punc]
+  '&': [punc]
+  pp: [consonant]
   bb: [consonant]
+  ḅḅ: [consonant]
+  vv: [consonant]
   mm: [consonant]
   ff: [consonant]
   tt: [consonant]
@@ -70,13 +89,22 @@ tokens:
 rules:
   <vowel> -: ""
   '-': ""
+  '’': " "
   ',': ""
   ' ': " "
+  '.': ""
+  '?': ""
+  '&': "&"
+  o: 'ⵓ'
   a: ⴰ
   e: ⴰ
   i: ⵉ
+  ï: ⵉ
   u: ⵓ
   b: ⴱ
+  ḅ: ⴲ
+  v: ⴲ
+  p: ⵒ
   m: ⵎ
   f: ⴼ
   t: ⵜ
@@ -85,13 +113,15 @@ rules:
   ḍ: ⴹ
   n: ⵏ
   r: ⵔ
-  ṛ: ⵔ
+  ṛ: ⵕ
   l: ⵍ
+  ţ: ⵜⵙ
   tt: ⵜⵙ
   zz: ⴷⵣ
   ss: ⵜⵙ
   s: ⵙ
-  ṣ: ⵙ
+  ç: ⵙ
+  ṣ: ⵚ
   z: ⵣ
   ẓ: ⵌ
   č: ⵞ
@@ -108,19 +138,14 @@ rules:
   h: ⵂ
   ḥ: ⵘ
   ɛ: ⵄ
-  a <consonant>: ""
-  u <consonant>: ""
-  i <consonant>: ""
-  e <consonant>: ""
-  a <hyphen>: ""
-  u <hyphen>: ""
-  i <hyphen>: ""
-  e <hyphen>: ""
-  a <wb>: "ⴰ"
-  u <wb>: "ⵓ"
-  e <wb>: "ⴻ"
-  i <wb>: "ⵉ"
+  aa: ⴰ
+  ee: ⴰ
+  ii: ⵉ
+  ïï: ⵉ
+  uu: ⵓ
   bb: ⴱ
+  vv: ⴲ
+  pp: ⵒ
   mm: ⵎ
   ff: ⴼ
   tt: ⵜ
@@ -149,10 +174,48 @@ rules:
   hh: ⵂ
   ḥḥ: ⵘ
   ɛɛ: ⵄ
+  a <consonant>: ""
+  u <consonant>: ""
+  i <consonant>: ""
+  e <consonant>: ""
+  o <consonant>: ""
+  a <hyphen>: ""
+  u <hyphen>: ""
+  i <hyphen>: ""
+  e <hyphen>: ""
+  o <hyphen>: ""
+  a <wb>: "ⴰ"
+  u <wb>: "ⵓ"
+  o <wb>: "ⵓ"
+  e <wb>: "ⴻ"
+  i <wb>: "ⵉ"
+  a <vowel>: "ⴰ"
+  u <vowel>: "ⵓ"
+  o <vowel>: "ⵓ"
+  e <vowel>: "ⴻ"
+  i <vowel>: "ⵉ"
+  <vowel> a: "ⴰ"
+  <vowel> u: "ⵓ"
+  <vowel> o: "ⵓ"
+  <vowel> e: "ⴻ"
+  <vowel> i: "ⵉ"
 whitespace:
   consolidate: false
   default: ' '
   token_class: whitespace
 metadata:
-  title: ITRANS to Unicode
-  version: 0.1.0
+  name: example
+  version: 1.0.0
+  description: "Latin Berber to Tuareg Tifinagh (Ahaggar) Transliterator"
+  url: https://github.com/argideritzalpea/orthographic-ASR/blob/master/transliterate/transliterators/tifinagh_Ahaggar.yml
+  author: Chris Haberland
+  license: MIT License
+  keywords:
+    - Tuareg
+    - Tifinagh
+    - orthography
+    - transliterator
+  project_urls:
+    Documentation: https://github.com/argideritzalpea/orthographic-ASR
+    Source: https://github.com/argideritzalpea/orthographic-ASR
+    Tracker: https://github.com/argideritzalpea/orthographic-ASR/issues

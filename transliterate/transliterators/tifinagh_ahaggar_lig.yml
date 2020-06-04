@@ -1,0 +1,318 @@
+tokens:
+  a: [vowel]
+  e: [vowel]
+  i: [vowel]
+  ï: [vowel]
+  u: [vowel]
+  o: [vowel]
+  aa: [vowel]
+  ee: [vowel]
+  ii: [vowel]
+  ïï: [vowel]
+  uu: [vowel]
+  p: [consonant]
+  b: [consonant]
+  ḅ: [consonant]
+  v: [consonant]
+  m: [consonant]
+  f: [consonant]
+  t: [consonant]
+  ṭ: [consonant]
+  d: [consonant]
+  ḍ: [consonant]
+  n: [consonant]
+  r: [consonant]
+  ṛ: [consonant]
+  l: [consonant]
+  ţ: [consonant]
+  tt: [consonant]
+  zz: [consonant]
+  ss: [consonant]
+  s: [consonant]
+  ç: [consonant]
+  ṣ: [consonant]
+  z: [consonant]
+  ẓ: [consonant]
+  č: [consonant]
+  ǧ: [consonant]
+  c: [consonant]
+  j: [consonant]
+  y: [consonant]
+  k: [consonant]
+  g: [consonant]
+  w: [consonant]
+  q: [consonant]
+  x: [consonant]
+  ɣ: [consonant]
+  h: [consonant]
+  ḥ: [consonant]
+  ɛ: [consonant]
+  ' ': [wb,whitespace]
+  '-': [hyphen]
+  ',': [punc]
+  '.': [punc]
+  '?': [punc]
+  '’': [punc]
+  '&': [punc]
+  pp: [consonant]
+  bb: [consonant]
+  ḅḅ: [consonant]
+  vv: [consonant]
+  mm: [consonant]
+  ff: [consonant]
+  tt: [consonant]
+  ṭṭ: [consonant]
+  dd: [consonant]
+  ḍḍ: [consonant]
+  nn: [consonant]
+  rr: [consonant]
+  ṛṛ: [consonant]
+  ll: [consonant]
+  ss: [consonant]
+  ṣṣ: [consonant]
+  zz: [consonant]
+  ẓẓ: [consonant]
+  čč: [consonant]
+  ǧǧ: [consonant]
+  cc: [consonant]
+  jj: [consonant]
+  yy: [consonant]
+  kk: [consonant]
+  gg: [consonant]
+  ww: [consonant]
+  qq: [consonant]
+  xx: [consonant]
+  ɣɣ: [consonant]
+  hh: [consonant]
+  ḥḥ: [consonant]
+  ɛɛ: [consonant]
+  nb: [consonant]
+  nnb: [consonant]
+  nbb: [consonant]
+  nd: [consonant]
+  nnd: [consonant]
+  ndd: [consonant]
+  nḍ: [consonant]
+  nnḍ: [consonant]
+  nḍḍ: [consonant]
+  ng: [consonant]
+  nng: [consonant]
+  ngg: [consonant]
+  nk: [consonant]
+  nnk: [consonant]
+  nkk: [consonant]
+  bt: [consonant]
+  bbt: [consonant]
+  btt: [consonant]
+  ft: [consonant]
+  fft: [consonant]
+  ftt: [consonant]
+  gt: [consonant]
+  ggt: [consonant]
+  gtt: [consonant]
+  ǧt: [consonant]
+  ǧǧt: [consonant]
+  ǧtt: [consonant]
+  lt: [consonant]
+  llt: [consonant]
+  ltt: [consonant]
+  mt: [consonant]
+  mmt: [consonant]
+  mtt: [consonant]
+  nt: [consonant]
+  nnt: [consonant]
+  ntt: [consonant]
+  rt: [consonant]
+  rrt: [consonant]
+  rtt: [consonant]
+  st: [consonant]
+  sst: [consonant]
+  stt: [consonant]
+  ct: [consonant]
+  cct: [consonant]
+  ctt: [consonant]
+  ẓt: [consonant]
+  ẓẓt: [consonant]
+  ẓtt: [consonant]
+rules:
+  <vowel> -: ""
+  '-': ""
+  '’': " "
+  ',': ""
+  ' ': " "
+  '.': ""
+  '?': ""
+  '&': "&"
+  o: 'ⵓ'
+  a: ⴰ
+  e: ⴰ
+  i: ⵉ
+  ï: ⵉ
+  u: ⵓ
+  b: ⴱ
+  ḅ: ⴲ
+  v: ⴲ
+  p: ⵒ
+  m: ⵎ
+  f: ⴼ
+  t: ⵜ
+  ṭ: ⵟ
+  d: ⴷ
+  ḍ: ⴹ
+  n: ⵏ
+  r: ⵔ
+  ṛ: ⵕ
+  l: ⵍ
+  ţ: ⵜⵙ
+  tt: ⵜⵙ
+  zz: ⴷⵣ
+  ss: ⵜⵙ
+  s: ⵙ
+  ç: ⵙ
+  ṣ: ⵚ
+  z: ⵣ
+  ẓ: ⵌ
+  č: ⵞ
+  ǧ: ⴶ
+  c: ⵛ
+  j: ⵊ
+  y: ⵉ
+  k: ⴾ
+  g: ⴳ
+  w: ⵓ
+  q: ⵈ
+  x: ⵆ
+  ɣ: ⵗ
+  h: ⵂ
+  ḥ: ⵘ
+  ɛ: ⵄ
+  aa: ⴰ
+  ee: ⴰ
+  ii: ⵉ
+  ïï: ⵉ
+  uu: ⵓ
+  bb: ⴱ
+  vv: ⴲ
+  pp: ⵒ
+  mm: ⵎ
+  ff: ⴼ
+  tt: ⵜ
+  ṭṭ: ⵟ
+  dd: ⴷ
+  ḍḍ: ⴹ
+  nn: ⵏ
+  rr: ⵔ
+  ṛṛ: ⵔ
+  ll: ⵍ
+  ss: ⵙ
+  ṣṣ: ⵙ
+  zz: ⵣ
+  ẓẓ: ⵌ
+  čč: ⵞ
+  ǧǧ: ⴶ
+  cc: ⵛ
+  jj: ⵊ
+  yy: ⵉ
+  kk: ⴾ
+  gg: ⴳ
+  ww: ⵓ
+  qq: ⵈ
+  xx: ⵆ
+  ɣɣ: ⵗ
+  hh: ⵂ
+  ḥḥ: ⵘ
+  ɛɛ: ⵄ
+  <consonant> - <consonant>: ""
+  a <consonant>: ""
+  u <consonant>: ""
+  i <consonant>: ""
+  e <consonant>: ""
+  o <consonant>: ""
+  a <hyphen>: ""
+  u <hyphen>: ""
+  i <hyphen>: ""
+  e <hyphen>: ""
+  o <hyphen>: ""
+  a <wb>: "ⴰ"
+  u <wb>: "ⵓ"
+  o <wb>: "ⵓ"
+  e <wb>: "ⴻ"
+  i <wb>: "ⵉ"
+  a <vowel>: "ⴰ"
+  u <vowel>: "ⵓ"
+  o <vowel>: "ⵓ"
+  e <vowel>: "ⴻ"
+  i <vowel>: "ⵉ"
+  <vowel> a: "ⴰ"
+  <vowel> u: "ⵓ"
+  <vowel> o: "ⵓ"
+  <vowel> e: "ⴻ"
+  <vowel> i: "ⵉ"
+  nb: ⵃ
+  nnb: ⵃ
+  nbb: ⵃ
+  nd: ⵁ
+  nnd: ⵁ
+  ndd: ⵁ
+  nḍ: ⴿ
+  nnḍ: ⴿ
+  nḍḍ: ⴿ
+  ng: ⵑ
+  nng: ⵑ
+  ngg: ⵑ
+  nk: ⵐ
+  nnk: ⵐ
+  nkk: ⵐ
+  bt: ⴽ
+  bbt: ⴽ
+  btt: ⴽ
+  ft: ⵠ
+  fft: ⵠ
+  ftt: ⵠ
+  gt: ⵇ
+  ggt: ⵇ
+  gtt: ⵇ
+  ǧt: ⵅ
+  ǧǧt: ⵅ
+  ǧtt: ⵅ
+  lt: ⴺ
+  llt: ⴺ
+  ltt: ⴺ
+  mt: ⴸ
+  mmt: ⴸ
+  mtt: ⴸ
+  nt: ⴵ
+  nnt: ⴵ
+  ntt: ⴵ
+  rt: ⴴ
+  rrt: ⴴ
+  rtt: ⴴ
+  st: ⵤ
+  sst: ⵤ
+  stt: ⵤ
+  ct: ⵋ
+  cct: ⵋ
+  ctt: ⵋ
+  ẓt: ⵥ
+  ẓẓt: ⵥ
+  ẓtt: ⵥ
+whitespace:
+  consolidate: false
+  default: ' '
+  token_class: whitespace
+metadata:
+  name: example
+  version: 1.0.0
+  description: "Latin Berber to Tuareg Tifinagh (Ahaggar) Transliterator"
+  url: https://github.com/argideritzalpea/orthographic-ASR/blob/master/transliterate/transliterators/tifinagh_Ahaggar.yml
+  author: Chris Haberland
+  license: MIT License
+  keywords:
+    - Tuareg
+    - Tifinagh
+    - orthography
+    - transliterator
+  project_urls:
+    Documentation: https://github.com/argideritzalpea/orthographic-ASR
+    Source: https://github.com/argideritzalpea/orthographic-ASR
+    Tracker: https://github.com/argideritzalpea/orthographic-ASR/issues

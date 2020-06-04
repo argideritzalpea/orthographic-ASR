@@ -1,0 +1,181 @@
+tokens:
+  a: [vowel]
+  e: [vowel]
+  i: [vowel]
+  u: [vowel]
+  b: [consonant]
+  m: [consonant]
+  f: [consonant]
+  t: [consonant]
+  ṭ: [consonant]
+  d: [consonant]
+  ḍ: [consonant]
+  n: [consonant]
+  r: [consonant]
+  ṛ: [consonant]
+  l: [consonant]
+  tt: [consonant]
+  zz: [consonant]
+  ss: [consonant]
+  s: [consonant]
+  ṣ: [consonant]
+  z: [consonant]
+  ẓ: [consonant]
+  č: [consonant]
+  ǧ: [consonant]
+  ğ: [consonant]
+  c: [consonant]
+  j: [consonant]
+  y: [consonant]
+  k: [consonant]
+  g: [consonant]
+  w: [consonant]
+  q: [consonant]
+  x: [consonant]
+  ɣ: [consonant]
+  h: [consonant]
+  ḥ: [consonant]
+  ɛ: [consonant]
+  ' ': [wb,whitespace]
+  '-': [hyphen]
+  ',': [punc]
+  '?': [punc]
+  '.': [punc]
+  bb: [consonant]
+  mm: [consonant]
+  ff: [consonant]
+  tt: [consonant]
+  ṭṭ: [consonant]
+  dd: [consonant]
+  ḍḍ: [consonant]
+  nn: [consonant]
+  rr: [consonant]
+  ṛṛ: [consonant]
+  ll: [consonant]
+  ss: [consonant]
+  ṣṣ: [consonant]
+  zz: [consonant]
+  ẓẓ: [consonant]
+  čč: [consonant]
+  ǧǧ: [consonant]
+  ğğ: [consonant]
+  cc: [consonant]
+  jj: [consonant]
+  yy: [consonant]
+  kk: [consonant]
+  gg: [consonant]
+  ww: [consonant]
+  qq: [consonant]
+  xx: [consonant]
+  ɣɣ: [consonant]
+  hh: [consonant]
+  ḥḥ: [consonant]
+  ɛɛ: [consonant]
+rules:
+  <vowel> -: ""
+  '-': ""
+  ',': ""
+  ' ': " "
+  '?': "؟"
+  '.': "."
+  a: ا
+  e: ""
+  i: ي
+  u: و
+  b: ب
+  m: م
+  f: ف
+  t: ت
+  ṭ: ط
+  d: د
+  ḍ: ض
+  n: ن
+  r: ر
+  ṛ: ر
+  l: ل
+  tt: تّ
+  zz: دز
+  ss: تّ
+  s: س
+  ṣ: ص
+  z: ز
+  ẓ: ز
+  č: چ
+  ǧ: ڨ
+  ğ: ڨ
+  c: ش
+  j: ج
+  y: ي
+  k: ك
+  g: ڨ
+  w: و
+  q: ق
+  x: خ
+  ɣ: غ
+  h: ه
+  ḥ: ح
+  ɛ: ع
+  a <consonant>: "أ"
+  u <consonant>: "أو"
+  i <consonant>: "أي"
+  <consonant> a <consonant>: "ا"
+  <consonant> u <consonant>: "و"
+  <consonant> i <consonant>: "ي"
+  e <consonant>: ""
+  a <hyphen>: "ا"
+  u <hyphen>: "و"
+  i <hyphen>: "ي"
+  e <hyphen>: ""
+  a <wb>: "ا"
+  u <wb>: "و"
+  e <wb>: ""
+  i <wb>: "ي"
+  bb: بّ
+  mm: مّ
+  ff: فّ
+  ṭṭ: طّ
+  dd: دّ
+  ḍḍ: ضّ
+  nn: نّ
+  rr: رّ
+  ṛṛ: رّ
+  ll: لّ
+  ss: سّ
+  ṣṣ: صّ
+  zz: زّ
+  ẓẓ: زّ
+  čč: چّ
+  ǧǧ: ڨّ
+  ğğ: ڨ
+  cc: شّ
+  jj: جّ
+  yy: يّ
+  kk: كّ
+  gg: ڨّ
+  ww: وّ
+  qq: قّ
+  xx: خّ
+  ɣɣ: غّ
+  hh: هّ
+  ḥḥ: حّ
+  ɛɛ: عّ
+whitespace:
+  consolidate: false
+  default: ' '
+  token_class: whitespace
+metadata:
+  name: example
+  version: 1.0.0
+  description: "Latin Berber to composite Arabic script Transliterator"
+  url: https://github.com/argideritzalpea/orthographic-ASR/blob/master/transliterate/transliterators/tifinagh_Ahaggar.yml
+  author: Chris Haberland
+  license: MIT License
+  keywords:
+    - Kabyle
+    - Arabic
+    - orthography
+    - transliterator
+  project_urls:
+    Documentation: https://github.com/argideritzalpea/orthographic-ASR
+    Source: https://github.com/argideritzalpea/orthographic-ASR
+    Tracker: https://github.com/argideritzalpea/orthographic-ASR/issues

@@ -1,0 +1,403 @@
+Starting at : 06/06/20 16:35:23
+Ending at : 06/06/20 16:35:23
+Starting at : 06/06/20 16:38:07
+Ending at : 06/06/20 16:38:07
+Starting at : 06/06/20 16:39:24
+Ending at : 06/06/20 16:39:48
+Starting at : 06/06/20 16:41:11
+I Could not find best validating checkpoint.
+I Could not find most recent checkpoint.
+I Initializing all variables.
+I STARTING Optimization
+I Training epoch 0...
+Ending at : 06/06/20 16:41:47
+Starting at : 06/06/20 16:48:16
+I Could not find best validating checkpoint.
+I Could not find most recent checkpoint.
+I Initializing all variables.
+I STARTING Optimization
+I Training epoch 0...
+Ending at : 06/06/20 16:48:29
+Starting at : 06/06/20 16:53:01
+I Could not find best validating checkpoint.
+I Could not find most recent checkpoint.
+I Initializing all variables.
+I STARTING Optimization
+I Training epoch 0...
+I Finished training epoch 0 - loss: 0.000000
+I Validating epoch 0 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/dev.csv...
+I Finished validating epoch 0 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/dev.csv - loss: 0.000000
+Ending at : 06/06/20 16:53:15
+Starting at : 06/06/20 16:59:49
+I Could not find best validating checkpoint.
+I Loading most recent checkpoint from /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/train-0
+I Loading variable from checkpoint: beta1_power
+I Loading variable from checkpoint: beta2_power
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/bias
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/bias/Adam
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/bias/Adam_1
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/kernel
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/kernel/Adam
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/kernel/Adam_1
+I Loading variable from checkpoint: global_step
+I Loading variable from checkpoint: layer_1/bias
+I Loading variable from checkpoint: layer_1/bias/Adam
+I Loading variable from checkpoint: layer_1/bias/Adam_1
+I Loading variable from checkpoint: layer_1/weights
+I Loading variable from checkpoint: layer_1/weights/Adam
+I Loading variable from checkpoint: layer_1/weights/Adam_1
+I Loading variable from checkpoint: layer_2/bias
+I Loading variable from checkpoint: layer_2/bias/Adam
+I Loading variable from checkpoint: layer_2/bias/Adam_1
+I Loading variable from checkpoint: layer_2/weights
+I Loading variable from checkpoint: layer_2/weights/Adam
+I Loading variable from checkpoint: layer_2/weights/Adam_1
+I Loading variable from checkpoint: layer_3/bias
+I Loading variable from checkpoint: layer_3/bias/Adam
+I Loading variable from checkpoint: layer_3/bias/Adam_1
+I Loading variable from checkpoint: layer_3/weights
+I Loading variable from checkpoint: layer_3/weights/Adam
+I Loading variable from checkpoint: layer_3/weights/Adam_1
+I Loading variable from checkpoint: layer_5/bias
+I Loading variable from checkpoint: layer_5/bias/Adam
+I Loading variable from checkpoint: layer_5/bias/Adam_1
+I Loading variable from checkpoint: layer_5/weights
+I Loading variable from checkpoint: layer_5/weights/Adam
+I Loading variable from checkpoint: layer_5/weights/Adam_1
+I Loading variable from checkpoint: layer_6/bias
+I Loading variable from checkpoint: layer_6/bias/Adam
+I Loading variable from checkpoint: layer_6/bias/Adam_1
+I Loading variable from checkpoint: layer_6/weights
+I Loading variable from checkpoint: layer_6/weights/Adam
+I Loading variable from checkpoint: layer_6/weights/Adam_1
+I Loading variable from checkpoint: learning_rate
+I STARTING Optimization
+I Training epoch 0...
+I Finished training epoch 0 - loss: 64.023068
+I Validating epoch 0 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 0 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 54.341280
+I Saved new best validating model with loss 54.341280 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-1156
+I Training epoch 1...
+I Finished training epoch 1 - loss: 45.772774
+I Validating epoch 1 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 1 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 46.234520
+I Saved new best validating model with loss 46.234520 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-2312
+I Training epoch 2...
+I Finished training epoch 2 - loss: 38.456590
+I Validating epoch 2 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 2 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 41.939140
+I Saved new best validating model with loss 41.939140 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-3468
+I Training epoch 3...
+I Finished training epoch 3 - loss: 34.321574
+I Validating epoch 3 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 3 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 39.861034
+I Saved new best validating model with loss 39.861034 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-4624
+I Training epoch 4...
+I Finished training epoch 4 - loss: 31.449049
+I Validating epoch 4 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 4 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 38.436371
+I Saved new best validating model with loss 38.436371 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-5780
+I Training epoch 5...
+I Finished training epoch 5 - loss: 29.263373
+I Validating epoch 5 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 5 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 37.406937
+I Saved new best validating model with loss 37.406937 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-6936
+I Training epoch 6...
+I Finished training epoch 6 - loss: 27.403293
+I Validating epoch 6 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 6 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 36.742780
+I Saved new best validating model with loss 36.742780 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-8092
+I Training epoch 7...
+I Finished training epoch 7 - loss: 25.753685
+I Validating epoch 7 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 7 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.811867
+I Saved new best validating model with loss 35.811867 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-9248
+I Training epoch 8...
+I Finished training epoch 8 - loss: 24.371027
+I Validating epoch 8 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 8 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 36.222272
+I Training epoch 9...
+I Finished training epoch 9 - loss: 23.102425
+I Validating epoch 9 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 9 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.547331
+I Saved new best validating model with loss 35.547331 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-11560
+I Training epoch 10...
+I Finished training epoch 10 - loss: 21.902206
+I Validating epoch 10 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 10 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.897358
+I Training epoch 11...
+I Finished training epoch 11 - loss: 20.857912
+I Validating epoch 11 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 11 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.376940
+I Saved new best validating model with loss 35.376940 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-13872
+I Training epoch 12...
+I Finished training epoch 12 - loss: 19.857984
+I Validating epoch 12 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 12 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.036884
+I Saved new best validating model with loss 35.036884 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-15028
+I Training epoch 13...
+I Finished training epoch 13 - loss: 18.924131
+I Validating epoch 13 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 13 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.220077
+I Training epoch 14...
+I Finished training epoch 14 - loss: 18.054270
+I Validating epoch 14 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 14 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 34.779350
+I Saved new best validating model with loss 34.779350 to: /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-17340
+I Training epoch 15...
+I Finished training epoch 15 - loss: 17.297161
+I Validating epoch 15 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 15 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.080361
+I Training epoch 16...
+I Finished training epoch 16 - loss: 16.526425
+I Validating epoch 16 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 16 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 34.855778
+I Training epoch 17...
+I Finished training epoch 17 - loss: 15.824549
+I Validating epoch 17 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 17 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.146515
+I Training epoch 18...
+I Finished training epoch 18 - loss: 15.139856
+I Validating epoch 18 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 18 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 35.846135
+I Training epoch 19...
+I Finished training epoch 19 - loss: 14.426523
+I Validating epoch 19 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 19 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 36.022859
+I Training epoch 20...
+I Finished training epoch 20 - loss: 13.844260
+I Validating epoch 20 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 20 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 36.465377
+I Training epoch 21...
+I Finished training epoch 21 - loss: 13.256359
+I Validating epoch 21 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 21 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 37.530842
+I Training epoch 22...
+I Finished training epoch 22 - loss: 12.736944
+I Validating epoch 22 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 22 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 37.723917
+I Training epoch 23...
+I Finished training epoch 23 - loss: 12.203805
+I Validating epoch 23 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 23 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 38.497708
+I Training epoch 24...
+I Finished training epoch 24 - loss: 11.706416
+I Validating epoch 24 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 24 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 39.046562
+I Training epoch 25...
+I Finished training epoch 25 - loss: 11.251798
+I Validating epoch 25 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 25 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 39.624696
+I Training epoch 26...
+I Finished training epoch 26 - loss: 10.798287
+I Validating epoch 26 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 26 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 39.176958
+I Training epoch 27...
+I Finished training epoch 27 - loss: 10.400721
+I Validating epoch 27 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 27 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 39.969292
+I Training epoch 28...
+I Finished training epoch 28 - loss: 9.957025
+I Validating epoch 28 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 28 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 40.932080
+I Training epoch 29...
+I Finished training epoch 29 - loss: 9.645001
+I Validating epoch 29 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 29 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 40.593846
+I Training epoch 30...
+I Finished training epoch 30 - loss: 9.268295
+I Validating epoch 30 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 30 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 40.009947
+I Training epoch 31...
+I Finished training epoch 31 - loss: 8.904215
+I Validating epoch 31 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 31 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 40.918176
+I Training epoch 32...
+I Finished training epoch 32 - loss: 8.575390
+I Validating epoch 32 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 32 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 40.312756
+I Training epoch 33...
+I Finished training epoch 33 - loss: 8.289668
+I Validating epoch 33 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 33 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 41.602089
+I Training epoch 34...
+I Finished training epoch 34 - loss: 7.982061
+I Validating epoch 34 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 34 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 41.957713
+I Training epoch 35...
+I Finished training epoch 35 - loss: 7.706885
+I Validating epoch 35 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 35 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 42.443948
+I Training epoch 36...
+I Finished training epoch 36 - loss: 7.444426
+I Validating epoch 36 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 36 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 42.837497
+I Training epoch 37...
+I Finished training epoch 37 - loss: 7.174857
+I Validating epoch 37 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 37 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 43.084606
+I Training epoch 38...
+I Finished training epoch 38 - loss: 6.931484
+I Validating epoch 38 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 38 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 44.180935
+I Training epoch 39...
+I Finished training epoch 39 - loss: 6.679348
+I Validating epoch 39 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 39 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 45.292712
+I Training epoch 40...
+I Finished training epoch 40 - loss: 6.470040
+I Validating epoch 40 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 40 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 45.370372
+I Training epoch 41...
+I Finished training epoch 41 - loss: 6.297544
+I Validating epoch 41 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 41 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 45.665707
+I Training epoch 42...
+I Finished training epoch 42 - loss: 6.082783
+I Validating epoch 42 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 42 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 45.723728
+I Training epoch 43...
+I Finished training epoch 43 - loss: 5.863135
+I Validating epoch 43 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 43 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 46.777924
+I Training epoch 44...
+I Finished training epoch 44 - loss: 5.699906
+I Validating epoch 44 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 44 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 47.098991
+I Training epoch 45...
+I Finished training epoch 45 - loss: 5.568864
+I Validating epoch 45 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 45 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 47.494658
+I Training epoch 46...
+I Finished training epoch 46 - loss: 5.385724
+I Validating epoch 46 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 46 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 48.468695
+I Training epoch 47...
+I Finished training epoch 47 - loss: 5.227967
+I Validating epoch 47 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 47 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 49.066066
+I Training epoch 48...
+I Finished training epoch 48 - loss: 5.066023
+I Validating epoch 48 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 48 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 49.083209
+I Training epoch 49...
+I Finished training epoch 49 - loss: 4.944738
+I Validating epoch 49 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv...
+I Finished validating epoch 49 on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/dev.csv - loss: 50.302801
+I FINISHED optimization in 10:50:43.175630
+I Loading best validating checkpoint from /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-17340
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/bias
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/kernel
+I Loading variable from checkpoint: global_step
+I Loading variable from checkpoint: layer_1/bias
+I Loading variable from checkpoint: layer_1/weights
+I Loading variable from checkpoint: layer_2/bias
+I Loading variable from checkpoint: layer_2/weights
+I Loading variable from checkpoint: layer_3/bias
+I Loading variable from checkpoint: layer_3/weights
+I Loading variable from checkpoint: layer_5/bias
+I Loading variable from checkpoint: layer_5/weights
+I Loading variable from checkpoint: layer_6/bias
+I Loading variable from checkpoint: layer_6/weights
+Testing model on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/test.csv
+I Test epoch...
+Test on /mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/test.csv - WER: 0.509182, CER: 0.286221, loss: 39.223171
+--------------------------------------------------------------------------------
+Best WER:
+--------------------------------------------------------------------------------
+WER: 0.000000, CER: 0.000000, loss: 77.977898
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19263322.wav
+ - src: "ssufuɣen ten bac ad d walin adeg seg yidgan icebḥen ama deg twilayt n bgayet neɣ berra s"
+ - res: "ssufuɣen ten bac ad d walin adeg seg yidgan icebḥen ama deg twilayt n bgayet neɣ berra s"
+--------------------------------------------------------------------------------
+WER: 0.000000, CER: 0.000000, loss: 77.959633
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_17657443.wav
+ - src: "i yemudden tiṛwiḥin nsen akken ad tidir tmurt n zzayer di talwit di tlelli di teɣdemt tinmettit"
+ - res: "i yemudden tiṛwiḥin nsen akken ad tidir tmurt n zzayer di talwit di tlelli di teɣdemt tinmettit"
+--------------------------------------------------------------------------------
+WER: 0.000000, CER: 0.000000, loss: 67.588829
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_17801171.wav
+ - src: "aḥric amezwaru ad d yawwi ɣef unamek n tetrarit d tulmisin n tmedyazt taqbaylit tatrart"
+ - res: "aḥric amezwaru ad d yawwi ɣef unamek n tetrarit d tulmisin n tmedyazt taqbaylit tatrart"
+--------------------------------------------------------------------------------
+WER: 0.000000, CER: 0.019231, loss: 63.638184
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_18944076.wav
+ - src: "gen di talwit a gma cekkal racid d awezɣi ad k nettu"
+ - res: "gen di talwit a gma cekkal racid d awezɣi ad k nettu "
+--------------------------------------------------------------------------------
+WER: 0.000000, CER: 0.015625, loss: 63.165089
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_17370812.wav
+ - src: "mi zrin kra n wussan ṭṭefen abrid nsen ɣer txelwit n mḥend uccen"
+ - res: "mi zrin kra n wussan ṭṭefen abrid nsen ɣer txelwit n mḥend uccen "
+--------------------------------------------------------------------------------
+Median WER:
+--------------------------------------------------------------------------------
+WER: 0.500000, CER: 0.192308, loss: 25.099295
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_17682952.wav
+ - src: "ad yelmed azekka taqbaylit"
+ - res: "ad yelmed as i taqbaylit"
+--------------------------------------------------------------------------------
+WER: 0.500000, CER: 0.066667, loss: 25.052973
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19382513.wav
+ - src: "ɣunzut facebook"
+ - res: "ɣunzu facebook"
+--------------------------------------------------------------------------------
+WER: 0.500000, CER: 0.296296, loss: 25.049385
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_18533107.wav
+ - src: "ula d aksum alamma nsečč as"
+ - res: "ula d aksum laman sekka s"
+--------------------------------------------------------------------------------
+WER: 0.500000, CER: 0.500000, loss: 25.003782
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19866736.wav
+ - src: "yuba isewway"
+ - res: "yuba yessawel"
+--------------------------------------------------------------------------------
+WER: 0.500000, CER: 0.333333, loss: 24.982924
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19373067.wav
+ - src: "terriḍ as tt id"
+ - res: "riɣ ad tt id"
+--------------------------------------------------------------------------------
+Worst WER:
+--------------------------------------------------------------------------------
+WER: 3.000000, CER: 0.666667, loss: 13.837433
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19628654.wav
+ - src: "ulamek"
+ - res: "ula d s"
+--------------------------------------------------------------------------------
+WER: 3.000000, CER: 0.545455, loss: 12.486281
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_17422279.wav
+ - src: "iburaḥlaten"
+ - res: "iruḥ d asen"
+--------------------------------------------------------------------------------
+WER: 3.000000, CER: 0.666667, loss: 11.590806
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19915644.wav
+ - src: "ssgezlemt"
+ - res: "s yizlan t"
+--------------------------------------------------------------------------------
+WER: 3.000000, CER: 0.571429, loss: 10.556120
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_19715203.wav
+ - src: "negguni"
+ - res: "deg ul i"
+--------------------------------------------------------------------------------
+WER: 5.000000, CER: 0.777778, loss: 54.100082
+ - wav: file:///mnt/disks/datadisk/mosaix/data/kab/latin_norm/clips/common_voice_kab_17566395.wav
+ - src: "amedyataqbaylitkab"
+ - res: "anda d taqbaylit rbant kan"
+--------------------------------------------------------------------------------
+I Exporting the model...
+I Loading best validating checkpoint from /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/checkpoints/best_dev-17340
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/bias
+I Loading variable from checkpoint: cudnn_lstm/rnn/multi_rnn_cell/cell_0/cudnn_compatible_lstm_cell/kernel
+I Loading variable from checkpoint: layer_1/bias
+I Loading variable from checkpoint: layer_1/weights
+I Loading variable from checkpoint: layer_2/bias
+I Loading variable from checkpoint: layer_2/weights
+I Loading variable from checkpoint: layer_3/bias
+I Loading variable from checkpoint: layer_3/weights
+I Loading variable from checkpoint: layer_5/bias
+I Loading variable from checkpoint: layer_5/weights
+I Loading variable from checkpoint: layer_6/bias
+I Loading variable from checkpoint: layer_6/weights
+I Models exported at /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/export-models/
+I Model metadata file saved to /mnt/disks/datadisk/mosaix/output/kab-h1024-dr0.3-ep50-latin_norm/export-models/author_model_0.0.1.md. Before submitting the exported model for publishing make sure all information in the metadata file is correct, and complete the URL fields.
+Ending at : 06/07/20 04:15:35

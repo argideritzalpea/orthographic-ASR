@@ -1,0 +1,110 @@
+tokens:
+  ⴰ: [vowel]
+  ⵉ: [vowel]
+  ⵓ: [vowel]
+  ⴻ: [vowel]
+  ⴱ: [consonant]
+  ⵒ: [consonant]
+  ⴲ: [consonant]
+  ⵎ: [consonant]
+  ⴼ: [consonant]
+  ⵜ: [consonant]
+  ⵟ: [consonant]
+  ⴷ: [consonant]
+  ⴹ: [consonant]
+  ⵏ: [consonant]
+  ⵔ: [consonant]
+  ⵕ: [consonant]
+  l: [consonant]
+  ⵜⵙ: [consonant]
+  ⴷⵣ: [consonant]
+  ⵙ: [consonant]
+  ⵚ: [consonant]
+  ⵣ: [consonant]
+  ⵌ: [consonant]
+  ⵞ: [consonant]
+  ⴶ: [consonant]
+  ⵛ: [consonant]
+  ⵊ: [consonant]
+  ⴾ: [consonant]
+  ⴳ: [consonant]
+  ⵓ: [consonant]
+  ⵍ: [consonant]
+  ⵈ: [consonant]
+  ⵆ: [consonant]
+  ⵗ: [consonant]
+  ⵂ: [consonant]
+  ⵘ: [consonant]
+  ⵄ: [consonant]
+  ' ': [wb,whitespace]
+  '-': [hyphen]
+  ',': [punc]
+  '.': [punc]
+  '?': [punc]
+  '’': [punc]
+  '&': [punc]
+rules:
+  <vowel> -: ""
+  '-': ""
+  '’': " "
+  ',': ""
+  ' ': " "
+  '.': ""
+  '?': ""
+  '&': "&"
+  ⴰ: a
+  ⵉ: y
+  ⵓ: u
+  ⴻ: e
+  ⴱ: b
+  ⴲ: ḅ
+  ⵒ: p
+  ⵎ: m
+  ⴼ: f
+  ⵜ: t
+  ⵟ: ṭ
+  ⴷ: d
+  ⴹ: ḍ
+  ⵏ: n
+  ⵔ: r
+  ⵕ: ṛ
+  ⵍ: l
+  ⵜⵙ: tt
+  ⴷⵣ: zz
+  ⵙ: s
+  ⵚ: ṣ
+  ⵣ: z
+  ⵌ: ẓ
+  ⵞ: ʧ
+  ⴶ: ʤ
+  ⵛ: c
+  ⵊ: j
+  ⴾ: k
+  ⴳ: g
+  ⵓ: w
+  ⵈ: q
+  ⵆ: x
+  ⵗ: ɣ
+  ⵂ: h
+  ⵘ: ḥ
+  ⵄ: ɛ
+whitespace:
+  consolidate: false
+  default: ' '
+  token_class: whitespace
+metadata:
+  name: example
+  version: 1.0.0
+  description: "Tifinagh (Ahaggar) to Latin Transliterator"
+  url: https://github.com/argideritzalpea/orthographic-ASR/blob/master/transliterate/transliterators/tifinagh_Ahaggar.yml
+  author: Chris Haberland
+  license: MIT License
+  keywords:
+    - Tuareg
+    - Tifinagh
+    - orthography
+    - transliterator
+  project_urls:
+    Documentation: https://github.com/argideritzalpea/orthographic-ASR
+    Source: https://github.com/argideritzalpea/orthographic-ASR
+    Tracker: https://github.com/argideritzalpea/orthographic-ASR/issues

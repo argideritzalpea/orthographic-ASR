@@ -1,0 +1,127 @@
+tokens:
+  a: [vowel]
+  e: [vowel]
+  i: [vowel]
+  ï: [vowel]
+  u: [vowel]
+  o: [vowel]
+  p: [consonant]
+  b: [consonant]
+  ḅ: [consonant]
+  v: [consonant]
+  m: [consonant]
+  f: [consonant]
+  t: [consonant]
+  ṭ: [consonant]
+  d: [consonant]
+  ḍ: [consonant]
+  n: [consonant]
+  r: [consonant]
+  ṛ: [consonant]
+  l: [consonant]
+  ţ: [consonant]
+  tt: [consonant]
+  zz: [consonant]
+  ss: [consonant]
+  s: [consonant]
+  ç: [consonant]
+  ṣ: [consonant]
+  z: [consonant]
+  ẓ: [consonant]
+  č: [consonant]
+  ǧ: [consonant]
+  ʧ: [consonant]
+  ʤ: [consonant]
+  c: [consonant]
+  j: [consonant]
+  y: [consonant]
+  k: [consonant]
+  g: [consonant]
+  w: [consonant]
+  q: [consonant]
+  x: [consonant]
+  ɣ: [consonant]
+  h: [consonant]
+  ḥ: [consonant]
+  ɛ: [consonant]
+  ' ': [wb,whitespace]
+  '-': [hyphen]
+  ',': [punc]
+  '.': [punc]
+  '?': [punc]
+  '’': [punc]
+  '&': [punc]
+rules:
+  '-': ""
+  '’': " "
+  ',': ""
+  ' ': " "
+  '.': ""
+  '?': ""
+  '&': "&"
+  o: ʊ
+  a: a
+  e: ə
+  i: i
+  ï: i
+  u: u
+  b: b
+  ḅ: β
+  v: β
+  p: p
+  m: m
+  f: f
+  t: t
+  ṭ: ṭ
+  d: d
+  ḍ: ḍ
+  n: n
+  r: r
+  ṛ: ṛ
+  l: l
+  ţ: tt
+  tt: tt
+  zz: zz
+  ss: ss
+  s: s
+  ç: s
+  ṣ: ṣ
+  z: z
+  ẓ: ẓ
+  č: c
+  ǧ: ʤ
+  ʧ: ʧ
+  ʤ: ʤ
+  c: ʃ
+  j: ʒ
+  y: j
+  k: k
+  g: ɡ
+  w: w
+  q: q
+  x: χ
+  ɣ: ʁ
+  h: h
+  ḥ: ħ
+  ɛ: ʕ
+whitespace:
+  consolidate: false
+  default: ' '
+  token_class: whitespace
+metadata:
+  name: example
+  version: 1.0.0
+  description: "Latin Berber to IPA"
+  url: https://github.com/argideritzalpea/orthographic-ASR/blob/master/transliterate/transliterators/tifinagh_Ahaggar.yml
+  author: Chris Haberland
+  license: MIT License
+  keywords:
+    - Tuareg
+    - Tifinagh
+    - orthography
+    - transliterator
+    - IPA
+  project_urls:
+    Documentation: https://github.com/argideritzalpea/orthographic-ASR
+    Source: https://github.com/argideritzalpea/orthographic-ASR
+    Tracker: https://github.com/argideritzalpea/orthographic-ASR/issues

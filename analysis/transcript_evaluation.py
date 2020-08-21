@@ -2,10 +2,24 @@ import lingpy
 import lingpy as lp
 from lingpy import *
 from lingpy.settings import rc
+from tqdm import tqdm
+import pandas as pd
 
 from collections import Counter
 
+lingpy.data.derive.compile_model("sca_tif", "~/lingpy/lingpy/data/models/")
+sca_tif = lingpy.data.model.Model("sca_tif")
+rcParams['model'] = sca_tif
+
+sca_model
 rc(merge_vowels=False)
+sca_model.converter['w']
+
+sca_model = rc('sca')
+sca_model.converter['j'] = 'I'
+sca_model.converter['w'] = 'Y'
+
+rc(sca=sca_tif)
 
 import re
 
@@ -35,7 +49,6 @@ class ConfusionDictionary:
 
     def getPreds(self):
         return self.pred2gold
-
 def alignTranscripts(compare_tuple, mergeGeminates=True, spacedGeminates=True):
     """
     Initial alignment of transcripts using Lingpy's 'prog_align' algorithm.
@@ -48,7 +61,6 @@ def alignTranscripts(compare_tuple, mergeGeminates=True, spacedGeminates=True):
     aligned = [x.split("\t") for x in msa.__unicode__().split("\n")]
     aligned = list(zip(aligned[0],aligned[1]))
     return aligned
-
 def addBackSpaces(aligned, compare_tuple):
     a_id = 0
     o_id = 0
@@ -149,131 +161,6 @@ def addBackSpaces(aligned, compare_tuple):
         final2.append(final[a_id+i])
 
     return final2
-
-examples = [('ad am yeṭṭef rebbi afus', "ad m yeṭṭfen dacu s"),
-            ('hedreɣ yakan d unelmad a', "arruy aka d n lmida"),
-            ('agerwaw', 'a ger wa uḥ'),
-            ('ayen tuḥwaǧeḍ', 'ay e d ḥwaǧeɣ a'),
-            ('and ya d taqbaylit rbant kaṭa', 'amedyataqbaylitkab'),
-            ('lemqeggel', 'l nṭeg g yil'),
-            ('akka i d tennamt', "akka i ten id"),
-            ('iburaḥlaten', 'eg ruḥ d aten'),
-            ('ur ččiɣ seksu ur seqqaɣ s lexliɛ', 'ur ččiɣ seksu ur seqqaɣ s lexliɛ'),
-            ('neẓra abeddel d awezɣi maca d adday kan fiɣef ad yesseḥibiber umdan', 'neẓra abeddel d awezɣi maca d adday kan fiɣef ad yesseḥibiber umdan')
-            ]
-examplesTif = [("ⵗⵔⴱⵣ ⵏⵗ ⵉⵣⴳⴰ ⴷ ⴷⴳ ⵜⵓⵔⵔⵜ", "ⵗⵔⴱⵣ ⵏⴹ ⵉⵣⴳⴰ ⴷ ⴷⴳ ⵜⵓⵔⵛⵜ")]
-
-
-## ConfusionMatrix
-gold_aligned = []
-pred_aligned = []
-confusion_matrix = ConfusionDictionary()
-possibilities = set(x for x in confusion_matrix.getPreds())
-for x in confusion_matrix.getGolds():
-    possibilities.add(x)
-
-
-## Print to files
-import json
-from graphtransliterator import GraphTransliterator
-gt = GraphTransliterator.from_yaml_file("/Users/mosaix/orthographic-ASR/transliterate/transliterators/latin_prealignment.yml")
-tf = GraphTransliterator.from_yaml_file("/Users/mosaix/orthographic-ASR/transliterate/transliterators/tifinagh_to_latin.yml")
-no_lm_store = {}
-
-
-gold_aligned = []
-pred_aligned = []
-with open('transliterate/output/latin_norm/no_lm/inferences.json') as f:
-    data = json.load(f)
-with open('transliterate/output/latin_norm/no_lm/alignments.txt', "w+") as l:
-    for i in data:
-        try:
-            wavfile = i['wav_filename'].split('/')[-1]
-            compare_tuple = (gt.transliterate(i['src']), gt.transliterate(i['res']))
-            no_lm_store.setdefault(wavfile, {})
-            no_lm_store[wavfile]['latin_gold'] = gt.transliterate(i['src'])
-            no_lm_store[wavfile]['latin_pred'] = gt.transliterate(i['res'])
-            aligned = alignTranscripts(compare_tuple)
-            aligned_with_spaces = addBackSpaces(aligned, compare_tuple)
-            aligned_out = list(map(list, zip(*aligned_with_spaces)))
-            l.write(str(i['src'] + "     :     " + i['res']))
-            l.write("\n")
-            l.write("gold: " + str(aligned_out[0]))
-            l.write("\n")
-            l.write("pred: " + str(aligned_out[1]))
-            l.write("\n")
-            l.write("\n")
-            gold_aligned.append(aligned_out[0])
-            pred_aligned.append(aligned_out[1])
-            confusion_matrix.add(aligned_with_spaces)
-        except:
-            print("EXCEPTION")
-
-gold_aligned = []
-pred_aligned = []
-with open('transliterate/output/tifinagh/no_lm/inferences.json') as f:
-    data = json.load(f)
-with open('transliterate/output/tifinagh/no_lm/alignments.txt', "w+") as l:
-    for i in data:
-        try:
-            wavfile = i['wav_filename'].split('/')[-1]
-            no_lm_store.setdefault(wavfile, {})
-            no_lm_store[wavfile]['tif_gold'] = gt.transliterate(tf.transliterate(i['src']))
-            no_lm_store[wavfile]['tif_pred'] = gt.transliterate(tf.transliterate(i['res']))
-            compare_tuple = (gt.transliterate(tf.transliterate(i['src'])), gt.transliterate(tf.transliterate(i['res'])))
-            aligned = alignTranscripts(compare_tuple)
-            aligned_with_spaces = addBackSpaces(aligned, compare_tuple)
-            aligned_out = list(map(list, zip(*aligned_with_spaces)))
-            l.write(str(i['src'] + "     :     " + i['res']))
-            l.write("\n")
-            l.write("gold: " + str(aligned_out[0]))
-            l.write("\n")
-            l.write("pred: " + str(aligned_out[1]))
-            l.write("\n")
-            l.write("\n")
-            gold_aligned.append(aligned_out[0])
-            pred_aligned.append(aligned_out[1])
-            confusion_matrix.add(aligned_with_spaces)
-        except:
-            print("EXCEPTION")
-            print(i)
-
-
-gold_aligned = []
-pred_aligned = []
-with open('transliterate/output/latin2tif/no_lm/inferences.json') as f:
-    data = json.load(f)
-with open('transliterate/output/latin2tif/no_lm/alignments.txt', "w+") as l:
-    for i in data:
-        try:
-            wavfile = i['wav_filename'].split('/')[-1]
-            no_lm_store.setdefault(wavfile, {})
-            no_lm_store[wavfile]['l2t_pred'] = gt.transliterate(tf.transliterate(i['res']))
-            compare_tuple = (gt.transliterate(tf.transliterate(i['src'])), gt.transliterate(tf.transliterate(i['res'])))
-            aligned = alignTranscripts(compare_tuple)
-            aligned_with_spaces = addBackSpaces(aligned, compare_tuple)
-            aligned_out = list(map(list, zip(*aligned_with_spaces)))
-            l.write(str(i['src'] + "     :     " + i['res']))
-            l.write("\n")
-            l.write("gold: " + str(aligned_out[0]))
-            l.write("\n")
-            l.write("pred: " + str(aligned_out[1]))
-            l.write("\n")
-            l.write("\n")
-            gold_aligned.append(aligned_out[0])
-            pred_aligned.append(aligned_out[1])
-            confusion_matrix.add(aligned_with_spaces)
-        except:
-            print("EXCEPTION")
-            print(i)
-
-
-exa = ['kr nḍr ttlḍn dr', "fukken lehduṛ ifeṣṣel uqenduṛ"]
-exa1 = ("d d iḍarren ččuren", "xeḍbeɣt m iḍaṛṛen yeččuren")
-exa2 = ("d dr tm drn črn", "xḍbɣt m ḍṛn yčrn", "xeḍbeɣt m iḍaṛṛen yeččuren", "d dder tt mmi tarren il ččuren")
-exa3 = ("d dr tm drn črn", "xḍbɣt m ḍṛn yčrn")
-
-
 def alignTranscriptsNoGemination(compare_tuple, mergeGeminates=False):
     """
     Initial alignment of transcripts using Lingpy's 'prog_align' algorithm.
@@ -285,7 +172,6 @@ def alignTranscriptsNoGemination(compare_tuple, mergeGeminates=False):
     aligned = [x.split("\t") for x in msa.__unicode__().split("\n")]
     aligned = list(zip(aligned[0],aligned[1]))
     return aligned
-
 def addBackSpacesNoGemination(aligned, compare_tuple):
     a_id = 0
     o_id = 0
@@ -362,17 +248,105 @@ def addBackSpacesNoGemination(aligned, compare_tuple):
 
     return final2
 
-tifpred_ligned = [x[0] for x in addBackSpaces(ligned, exa2)]
-tifgold_ligned = [x[1] for x in addBackSpaces(ligned, exa2)]
-tifpred_orig = exa2[0]
-tifgold_orig = exa2[1]
 
-i = 0
-for x in no_lm_store:
-    print(no_lm_store[x])
-    i += 1
-    if i > 10:
-        break
+## ConfusionMatrix
+confusion_matrix = ConfusionDictionary()
+possibilities = set(x for x in confusion_matrix.getPreds())
+for x in confusion_matrix.getGolds():
+    possibilities.add(x)
+import json
+from graphtransliterator import GraphTransliterator
+gt = GraphTransliterator.from_yaml_file("/Users/mosaix/orthographic-ASR/transliterate/transliterators/latin_prealignment.yml")
+tf = GraphTransliterator.from_yaml_file("/Users/mosaix/orthographic-ASR/transliterate/transliterators/tifinagh_to_latin.yml")
+no_lm_store = {}
+
+
+gold_aligned = []
+pred_aligned = []
+with open('transliterate/output/latin_norm/no_lm/inferences.json') as f:
+    data = json.load(f)
+with open('transliterate/output/latin_norm/no_lm/alignments.txt', "w+") as l:
+    for i in data:
+        try:
+            wavfile = i['wav_filename'].split('/')[-1]
+            compare_tuple = (gt.transliterate(i['src']), gt.transliterate(i['res']))
+            no_lm_store.setdefault(wavfile, {})
+            no_lm_store[wavfile]['latin_gold'] = gt.transliterate(i['src'])
+            no_lm_store[wavfile]['latin_pred'] = gt.transliterate(i['res'])
+            aligned = alignTranscripts(compare_tuple)
+            aligned_with_spaces = addBackSpaces(aligned, compare_tuple)
+            aligned_out = list(map(list, zip(*aligned_with_spaces)))
+            l.write(str(i['src'] + "     :     " + i['res']))
+            l.write("\n")
+            l.write("gold: " + str(aligned_out[0]))
+            l.write("\n")
+            l.write("pred: " + str(aligned_out[1]))
+            l.write("\n")
+            l.write("\n")
+            gold_aligned.append(aligned_out[0])
+            pred_aligned.append(aligned_out[1])
+            confusion_matrix.add(aligned_with_spaces)
+        except:
+            print("EXCEPTION")
+
+
+
+gold_aligned = []
+pred_aligned = []
+with open('transliterate/output/tifinagh/no_lm/inferences.json') as f:
+    data = json.load(f)
+with open('transliterate/output/tifinagh/no_lm/alignments.txt', "w+") as l:
+    for i in data:
+        try:
+            wavfile = i['wav_filename'].split('/')[-1]
+            no_lm_store.setdefault(wavfile, {})
+            no_lm_store[wavfile]['tif_gold'] = gt.transliterate(tf.transliterate(i['src']))
+            no_lm_store[wavfile]['tif_pred'] = gt.transliterate(tf.transliterate(i['res']))
+            compare_tuple = (gt.transliterate(tf.transliterate(i['src'])), gt.transliterate(tf.transliterate(i['res'])))
+            aligned = alignTranscriptsNoGemination(compare_tuple)
+            aligned_with_spaces = addBackSpacesNoGemination(aligned, compare_tuple)
+            aligned_out = list(map(list, zip(*aligned_with_spaces)))
+            l.write(str(i['src'] + "     :     " + i['res']))
+            l.write("\n")
+            l.write("gold: " + str(aligned_out[0]))
+            l.write("\n")
+            l.write("pred: " + str(aligned_out[1]))
+            l.write("\n")
+            l.write("\n")
+            gold_aligned.append(aligned_out[0])
+            pred_aligned.append(aligned_out[1])
+            confusion_matrix.add(aligned_with_spaces)
+        except:
+            print("EXCEPTION")
+            print(i)
+
+gold_aligned = []
+pred_aligned = []
+with open('transliterate/output/latin2tif/no_lm/inferences.json') as f:
+    data = json.load(f)
+with open('transliterate/output/latin2tif/no_lm/alignments.txt', "w+") as l:
+    for i in data:
+        try:
+            wavfile = i['wav_filename'].split('/')[-1]
+            no_lm_store.setdefault(wavfile, {})
+            no_lm_store[wavfile]['l2t_pred'] = gt.transliterate(tf.transliterate(i['res']))
+            compare_tuple = (gt.transliterate(tf.transliterate(i['src'])), gt.transliterate(tf.transliterate(i['res'])))
+            aligned = alignTranscriptsNoGemination(compare_tuple)
+            aligned_with_spaces = addBackSpacesNoGemination(aligned, compare_tuple)
+            aligned_out = list(map(list, zip(*aligned_with_spaces)))
+            l.write(str(i['src'] + "     :     " + i['res']))
+            l.write("\n")
+            l.write("gold: " + str(aligned_out[0]))
+            l.write("\n")
+            l.write("pred: " + str(aligned_out[1]))
+            l.write("\n")
+            l.write("\n")
+            gold_aligned.append(aligned_out[0])
+            pred_aligned.append(aligned_out[1])
+            confusion_matrix.add(aligned_with_spaces)
+        except:
+            print("EXCEPTION")
+            print(i)
 
 gold_aligned_l2t = []
 pred_aligned_l2t = []
@@ -396,8 +370,6 @@ with open('transliterate/output/latin2tif/no_lm/alignments_LatinGold.txt', "w+")
             gold_aligned_l2t.append(aligned_out[0])
             pred_aligned_l2t.append(aligned_out[1])
             confusion_matrix.add(aligned_with_spaces)
-
-
 
 gold_aligned_tif = []
 pred_aligned_tif = []
@@ -425,6 +397,7 @@ with open('transliterate/output/tifinagh/no_lm/alignments_LatinGold.txt', "w+") 
 def pad(list):
     return (["SOS"]+list+["EOS"])
 
+import pandas as pd
 def createComparisonFrame(gold_list, pred_list):
     counts = []
     for gold, pred in zip(gold_list, pred_list):
@@ -457,18 +430,57 @@ with open('/Users/mosaix/orthographic-ASR/transliterate/transliterators/latin_pr
     # use safe_load instead load
     prealign_yaml = yaml.safe_load(f)
 
+
 ### Rekey the values
 def label_CV_gold(row, column):
     lookup = prealign_yaml["tokens"]
+    lookup["E"] = "EOS"
+    lookup["ʊ"] = "vowel"
+    lookup["ə"] = "vowel"
+    lookup["ʁ"] = "consonant"
+    lookup["ʃ"] = "consonant"
+    lookup["ħ"] = "consonant"
+    lookup["β"] = "consonant"
+    lookup["ʒ"] = "consonant"
+    lookup["χ"] = "consonant"
+    lookup["ɡ"] = "consonant"
+    lookup["S"] = "SOS"
+    lookup["ʕ"] = "consonant"
+    lookup["*"] = "no_space"
     if row[column][0] in prealign_yaml["tokens"]:
-        return str(lookup[row[column][0]]).strip("[]")
+        return str(lookup[row[column][0]]).strip("[]'")
+    else:
+        undefined.add(row[column][0])
 
-def is_Correct(row):
-    if row['emission'] == row['cur_char']:
+def is_Correct(row, emission, cur_char='cur_char', prev_char='prev_char', next_char='next_char'):
+    compare_tuple = [row[emission][0], row[cur_char][0]]
+    # Allow for 'j' - 'i'
+    if compare_tuple[0] == 'j' and compare_tuple[1][0] == 'i':
+            return True
+    # Allow for 'w' - 'u'
+    if compare_tuple[0] == 'w' and compare_tuple[1][0] in ['u', 'o']:
+            return True
+    if compare_tuple[0][0] == compare_tuple[1][0]:
+        return True
+    return False
+
+def both_Match(row):
+    if row['3b_emission'][0] == row['3c_emission'][0]:
+        return True
+    return False
+
+
+def mismatch(row, pred_tf1='is_Correct_3b', pred_tf2='is_Correct_3c'):
+    if len(set([row[pred_tf1], row[pred_tf2]])) > 1:
         return True
     else:
         return False
 
+def eitherContains(row, char, pred_tf1='3b_emission', pred_tf2='3c_emission'):
+    if row['3b_emission'][0] == char or row['3c_emission'][0] == char:
+        return True
+    else:
+        return False
 
 latin2tif_comparison_frame['emission_CV'] = latin2tif_comparison_frame.apply (lambda row: label_CV_gold(row, 'emission'), axis=1)
 latin2tif_comparison_frame['cur_char_CV'] = latin2tif_comparison_frame.apply (lambda row: label_CV_gold(row, 'cur_char'), axis=1)
@@ -483,3 +495,247 @@ tifinagh_comparison_frame['prev_char_CV'] = tifinagh_comparison_frame.apply (lam
 tifinagh_comparison_frame['next_char_CV'] = tifinagh_comparison_frame.apply (lambda row: label_CV_gold(row, 'next_char'), axis=1)
 tifinagh_comparison_frame['is_Correct'] = tifinagh_comparison_frame.apply (lambda row: is_Correct(row), axis=1)
 tifinagh_comparison_frame.to_csv("tifinagh_comparison_frame.csv")
+
+
+
+def alignTranscriptsNoGeminationMulti(compare_tuple, mergeGeminates=False):
+    """
+    Initial alignment of transcripts using Lingpy's 'prog_align' algorithm.
+    """
+    #spaced_geminates = [re.sub(r'(?P<char>\w) (?P=char)', r"\g<1> :", x) for x in compare_tuple]
+    condensed = [re.sub(" ", "", x) for x in compare_tuple]
+    condensed = [compare_tuple[0]] + [re.sub("j", "j/i", x) for x in compare_tuple[1:]]
+    print(condensed)
+    msa = Multiple(condensed, merge_geminates=mergeGeminates)
+    msa.prog_align()
+    aligned = [x.split("\t") for x in msa.__unicode__().split("\n")]
+    aligned = list(zip(aligned[0],aligned[1],aligned[2]))
+    return aligned
+
+
+compare_tuple_test = (no_lm_store[wavfile]['tif_gold'], no_lm_store[wavfile]['tif_pred'], no_lm_store[wavfile]['l2t_pred'])
+compare_tuple_test
+
+no_lm_store[wavfile]
+aligned_test = alignTranscriptsNoGeminationMulti((no_lm_store[wavfile]['tif_gold'], no_lm_store[wavfile]['tif_pred'], no_lm_store[wavfile]['l2t_pred']))
+aligned_test
+
+
+def addBackSpaces(original, aligned):
+
+    final = []
+    a_index = 0
+    original_indices = [0] * len(original)
+
+    def checkIfDone():
+        for i, x in enumerate(original_indices):
+            if x >= len(original[i])-1:
+                yield True
+            else:
+                yield False
+
+    def checkWhichSpaced():
+        return [i for i, val in enumerate(original_indices) if original[i][min(val, len(original[i])-1)] == " "]
+
+    while not all(checkIfDone()) and a_index != len(aligned):
+        spaces = checkWhichSpaced()
+        dont_move = [i for i,x in enumerate(original) if aligned[a_index][i] == "-"]
+        if len(spaces) > 0:
+            append_unit = ["*"] * len(original)
+            for x in spaces:
+                original_indices[x] += 1
+                append_unit[x] = " "
+            final.append(tuple(append_unit))
+            continue
+        else:
+            for i, x in enumerate(original):
+                if i not in dont_move:
+                    original_indices[i] += 1
+            append_unit = aligned[a_index]
+            final.append(tuple(append_unit))
+            a_index += 1
+
+    while a_index != len(aligned):
+        append_unit = aligned[a_index]
+        final.append(tuple(append_unit))
+        a_index += 1
+
+    return final
+
+
+def cf_TwoTifinaghs2Gold(no_lm_store):
+    stripper = lambda x: x.strip()
+
+    counts = []
+    with open('transliterate/output/tri_alignments.txt', "w+") as outfile:
+        for wav in tqdm(no_lm_store):
+            try:
+                latin_gold = no_lm_store[wav]["latin_gold"]
+                tif_pred = no_lm_store[wav]["tif_pred"]
+                l2t_pred = no_lm_store[wav]["l2t_pred"]
+                original = [latin_gold]
+                if tif_pred not in [" " or ""]:
+                    original.append(tif_pred)
+                else:
+                    original.append("-")
+                if l2t_pred not in [" " or ""]:
+                    original.append(l2t_pred)
+                else:
+                    original.append("-")
+                original = tuple(original)
+                original = list(map(stripper, original))
+                aligned = alignTranscriptsNoGeminationMulti(original)
+                """
+                try:
+                    aligned = switchMatrisLectionis(aligned)
+                except Exception(e):
+                    print(e)
+                """
+                final = addBackSpaces(original, aligned)
+                start_pad = tuple(["SOS"]*3)
+                end_pad = tuple(["EOS"]*3)
+                final.insert(0,start_pad)
+                final.append(end_pad)
+                finalT = list(zip(*final))
+                outfile.write(wav)
+                outfile.write("\n")
+                outfile.write(str(original[0]) + "     :     " + str(original[1]) + "     :     " + str(original[2]))
+                outfile.write("\n")
+                outfile.write("gold:" + "\t" + str(finalT[0]))
+                outfile.write("\n")
+                outfile.write("tifn:" + "\t" + str(finalT[1]))
+                outfile.write("\n")
+                outfile.write("lt2_:" + "\t" + str(finalT[2]))
+                outfile.write("\n")
+                outfile.write("\n")
+                for i, (g, t, l) in enumerate(final):
+                    gold = finalT[0]
+                    if i > 0 and i < len(gold)-1:
+                        prev_char = ""
+                        cur_char = g
+                        next_char = ""
+                        if gold[i+1] == g:
+                            next_char = gold[i+2]
+                            cur_char = g+g
+                        else:
+                            next_char = gold[i+1]
+                        if gold[i-1] == g:
+                            prev_char = gold[i-2]
+                            cur_char = g+g
+                        else:
+                            prev_char = gold[i-1]
+                        counts.append([t, l, cur_char, prev_char, next_char, 1])
+            except:
+                print(wav)
+
+    df = pd.DataFrame(counts, columns=["3b_emission", "3c_emission", "cur_char", "prev_char", "next_char", "count"])
+    return df.groupby(["3b_emission", "3c_emission", "cur_char", "prev_char", "next_char"]).agg({'count': 'sum'}).reset_index()
+
+sample = sample_from_dict(no_lm_store)
+out = cf_TwoTifinaghs2Gold(sample)
+
+# Full
+cf_TwoTifinaghs2Gold(no_lm_store)
+
+aligned = [('i','-','-'),('-','j','k'),('k','-','g'),('i','j','j')]
+switchedout = switchMatrisLectionis(aligned)
+
+def printAlignment(aligned):
+    for i in aligned:
+        print(i)
+
+threway_df = cf_TwoTifinaghs2Gold(no_lm_store)
+threway_df.describe()
+
+"""
+wav = "common_voice_kab_17992085.wav"
+latin_gold = no_lm_store[wav]["latin_gold"]
+tif_pred = no_lm_store[wav]["tif_pred"]
+l2t_pred = no_lm_store[wav]["l2t_pred"]
+original = [latin_gold]
+
+original = tuple(original)
+original
+aligned = alignTranscriptsNoGeminationMulti(original)
+final = addBackSpaces(original, aligned)
+"""
+
+
+
+### Rekey the values
+threway_df.columns
+threway_df['3b_emission_CV'] = threway_df.apply (lambda row: label_CV_gold(row, '3b_emission'), axis=1)
+threway_df['3c_emission_CV'] = threway_df.apply (lambda row: label_CV_gold(row, '3c_emission'), axis=1)
+threway_df['cur_char_CV'] = threway_df.apply (lambda row: label_CV_gold(row, 'cur_char'), axis=1)
+threway_df['prev_char_CV'] = threway_df.apply (lambda row: label_CV_gold(row, 'prev_char'), axis=1)
+threway_df['next_char_CV'] = threway_df.apply (lambda row: label_CV_gold(row, 'next_char'), axis=1)
+threway_df['is_Correct_3b'] = threway_df.apply (lambda row: is_Correct(row, '3b_emission'), axis=1)
+threway_df['is_Correct_3c'] = threway_df.apply (lambda row: is_Correct(row, '3c_emission'), axis=1)
+threway_df['emissions_match'] = threway_df.apply (lambda row: both_Match(row), axis=1)
+threway_df['either_incorrect'] = threway_df.apply (lambda row: mismatch(row, 'is_Correct_3b','is_Correct_3c'), axis=1)
+threway_df['either_j'] = threway_df.apply (lambda row: eitherContains(row, 'j', '3b_emission','3c_emission'), axis=1)
+threway_df['either_w'] = threway_df.apply (lambda row: eitherContains(row, 'w', '3b_emission','3c_emission'), axis=1)
+
+threway_df.to_csv("tif_decoding_comparison_frame.csv", index=False)
+
+import random
+def sample_from_dict(d, sample=10):
+    keys = random.sample(list(d), sample)
+    values = [d[k] for k in keys]
+    return dict(zip(keys, values))
+
+
+
+
+
+latin_gold = no_lm_store['common_voice_kab_17867289.wav']["latin_gold"]
+tif_pred = no_lm_store['common_voice_kab_17867289.wav']["tif_pred"]
+l2t_pred = no_lm_store['common_voice_kab_17867289.wav']["l2t_pred"]
+original = [latin_gold]
+if tif_pred not in [" " or ""]:
+    original.append(tif_pred)
+if l2t_pred not in [" " or ""]:
+    original.append(l2t_pred)
+original = tuple(original)
+stripper = lambda x: x.strip()
+original = list(map(stripper, original))
+
+
+def alignTranscriptsNoGeminationMulti(compare_tuple, mergeGeminates=False):
+    """
+    Initial alignment of transcripts using Lingpy's 'prog_align' algorithm.
+    """
+    #spaced_geminates = [re.sub(r'(?P<char>\w) (?P=char)', r"\g<1> :", x) for x in compare_tuple]
+    condensed = [re.sub(" ", "", x) for x in compare_tuple]
+    """
+    treated = []
+    print(compare_tuple)
+    for index, x in enumerate(compare_tuple):
+        temp = []
+        if index > 0:
+            print(x)
+            for k in x:
+                if k[0] == "j":
+                    temp.append("j/i")
+                elif k[0] == "w":
+                    temp.append("w/o/u")
+                else:
+                    temp.append(k)
+            treated.append(temp)
+        else:
+            treated.append(list(x))
+    condensed = treated
+    """
+    msa = Multiple(condensed, merge_geminates=mergeGeminates, model="sca_tif")
+    msa.prog_align()
+    aligned = [x.split("\t") for x in msa.__unicode__().split("\n")]
+    aligned = list(zip(aligned[0],aligned[1],aligned[2]))
+    return aligned
+
+
+original
+aligned = alignTranscriptsNoGeminationMulti(original)
+aligned
+
+from lingpy.settings import rcParams
+rcParams

@@ -16,8 +16,6 @@ tokens:
   ⵔ: [consonant]
   ⵕ: [consonant]
   l: [consonant]
-  ⵜⵙ: [consonant]
-  ⴷⵣ: [consonant]
   ⵙ: [consonant]
   ⵚ: [consonant]
   ⵣ: [consonant]
@@ -69,8 +67,6 @@ rules:
   ⵔ: r
   ⵕ: ṛ
   ⵍ: l
-  ⵜⵙ: tt
-  ⴷⵣ: zz
   ⵙ: s
   ⵚ: ṣ
   ⵣ: z
